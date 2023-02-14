@@ -1,0 +1,118 @@
+using System;
+using System.IO;
+using System.Linq;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+
+        private const string Path = @"C:\Users\Dan\source\repos\ConsoleApp4\z1.txt";
+
+        static void Main(string[] args)
+        {
+            printTime();
+
+
+
+
+
+        }
+        public static void printTime()
+        {
+            //string sum;
+            string readText;
+
+
+            string sum;
+            string sum1;
+            string sum2;
+
+            int N;
+
+            string hour, minuts, second;
+            string hour1, minuts1, second1;
+            string hour2, minuts2, second2;
+            N = Convert.ToInt32(Console.ReadLine());
+
+
+
+
+
+            //
+            if (N == 1)
+            {
+                hour = Console.ReadLine();
+                minuts = Console.ReadLine();
+                second = Console.ReadLine();
+                sum = hour + ":" + minuts + ":" + second;
+
+
+                StreamWriter sw = new StreamWriter(Path);
+
+
+
+                sw.WriteLine(sum);
+
+                sw.Close();
+
+            }
+            if (N == 2)
+            {
+                hour = Console.ReadLine();
+                minuts = Console.ReadLine();
+                second = Console.ReadLine();
+                hour1 = Console.ReadLine();
+                minuts1 = Console.ReadLine();
+                second1 = Console.ReadLine();
+                sum = hour + ":" + minuts + ":" + second;
+                sum1 = hour1 + ":" + minuts1 + ":" + second1;
+                //string tt = sum;
+
+                string[] maf = new string[2] { sum, sum1 };
+                StreamWriter sw = new StreamWriter(Path);
+
+                for (int i = 0; i < maf.Length; i++)
+                {
+                    sw.WriteLine(maf[i]);
+                }
+                sw.Close();
+
+
+
+            }
+            if (N == 3)
+            {
+
+                hour = Console.ReadLine();
+                minuts = Console.ReadLine();
+                second = Console.ReadLine();
+                hour1 = Console.ReadLine();
+                minuts1 = Console.ReadLine();
+                second1 = Console.ReadLine();
+                hour2 = Console.ReadLine();
+                minuts2 = Console.ReadLine();
+                second2 = Console.ReadLine();
+                sum = hour + ":" + minuts + ":" + second;
+                sum1 = hour1 + ":" + minuts1 + ":" + second1;
+                sum2 = hour2 + ":" + minuts2 + ":" + second2;
+                string[] maf = new string[3] { sum, sum1, sum2 };
+                StreamWriter sw = new StreamWriter(Path);
+
+                for (int i = 0; i < maf.Length; i++)
+                {
+                    sw.WriteLine(maf[i]);
+                }
+                sw.Close();
+
+            }
+
+
+
+
+
+        }
+    }
+
+}
+
