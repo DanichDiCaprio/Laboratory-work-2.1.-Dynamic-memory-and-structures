@@ -1,0 +1,179 @@
+using System;
+using System.IO;
+using System.Linq;
+
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+
+        private const string Path = @"C:\Users\Dan\source\repos\ConsoleApp5\output.txt";
+
+        static void Main(string[] args)
+        {
+            readTime();
+
+
+
+
+
+        }
+        public static void readTime()
+        {
+            int check;
+
+            string hour;
+            string minut;
+            string second;
+
+            string secondLine;
+            secondLine = Console.ReadLine();
+
+            //hour = Convert.ToInt32(Console.ReadLine());
+            //minut = Convert.ToInt32(Console.ReadLine());
+            //second = Convert.ToInt32(Console.ReadLine());
+            int maxLength = 2;
+            //secondLine = File.ReadLines(Path).Skip(0).First();
+            hour = secondLine.Substring(0, Math.Min(secondLine.Length, maxLength));
+            minut = secondLine.Substring(3, Math.Min(secondLine.Length, maxLength));
+            //second = secondLine.Substring(6, Math.Min(secondLine.Length, maxLength));
+
+            //Console.WriteLine(hour);
+            //Console.WriteLine(minut);
+            //Console.WriteLine(second);
+            
+            int hourConvert = Convert.ToInt32(hour);
+            int minutConvert = Convert.ToInt32(minut);
+            //int secondConvert = Convert.ToInt32(second);
+            if(secondLine.Length > 6)
+            {
+                if (hourConvert > -1 && hourConvert < 24)
+                {
+                    if (minutConvert > -1 && minutConvert < 60)
+                    {
+                        second = secondLine.Substring(6, Math.Min(secondLine.Length, maxLength));
+                        int secondConvert = Convert.ToInt32(second);
+                        if (secondConvert > -1 && secondConvert < 60)
+                        {
+                            check = 1;
+                            string vivod1 = check + " " + hourConvert + " " + minutConvert + " " + secondConvert;
+                            string vivod2 = check + " " + hourConvert + " " + minutConvert;
+                            string vivod3 = check + " " + hourConvert;
+                            StreamWriter sw = new StreamWriter(Path);
+
+                            sw.WriteLine(vivod1);
+                            sw.WriteLine(vivod2);
+                            sw.WriteLine(vivod3);
+
+                            sw.Close();
+                            //Console.WriteLine(vivod1);
+                            //Console.WriteLine(vivod2);
+                            //Console.WriteLine(vivod3);
+                        }
+                        else
+                        {
+                            check = 0;
+                            hourConvert = -1;
+                            minutConvert = -1;
+                            int secondelse = -1;
+                            string vivod1 = check + " " + hourConvert + " " + minutConvert + " " + secondelse;
+                            string vivod2 = check + " " + hourConvert + " " + minutConvert;
+                            string vivod3 = check + " " + hourConvert;
+                            StreamWriter sw = new StreamWriter(Path);
+
+                            sw.WriteLine(vivod1);
+                            sw.WriteLine(vivod2);
+                            sw.WriteLine(vivod3);
+
+                            sw.Close();
+                            //Console.WriteLine(vivod1);
+                            //Console.WriteLine(vivod2);
+                            //Console.WriteLine(vivod3);
+                        }
+                    }
+                    else
+                    {
+                        check = 0;
+                        hourConvert = -1;
+                        minutConvert = -1;
+                        int secondelse = -1;
+                        string vivod1 = check + " " + hourConvert + " " + minutConvert + " " + secondelse;
+                        string vivod2 = check + " " + hourConvert + " " + minutConvert;
+                        string vivod3 = check + " " + hourConvert;
+                        //Console.WriteLine(vivod1);
+                        //Console.WriteLine(vivod2);
+                        //Console.WriteLine(vivod3);
+                        StreamWriter sw = new StreamWriter(Path);
+
+                        sw.WriteLine(vivod1);
+                        sw.WriteLine(vivod2);
+                        sw.WriteLine(vivod3);
+
+                        sw.Close();
+                    }
+                }
+                else
+                {
+                    check = 0;
+                    hourConvert = -1;
+                    minutConvert = -1;
+                    int secondelse = -1;
+                    string vivod1 = check + " " + hourConvert + " " + minutConvert + " " + secondelse;
+                    string vivod2 = check + " " + hourConvert + " " + minutConvert;
+                    string vivod3 = check + " " + hourConvert;
+                    //Console.WriteLine(vivod1);
+                    //Console.WriteLine(vivod2);
+                    //Console.WriteLine(vivod3);
+                    StreamWriter sw = new StreamWriter(Path);
+
+                    sw.WriteLine(vivod1);
+                    sw.WriteLine(vivod2);
+                    sw.WriteLine(vivod3);
+
+                    sw.Close();
+                }
+            }
+            else
+            {
+                if (hourConvert > -1 && hourConvert < 24)
+                {
+                    if (minutConvert > -1 && minutConvert < 60)
+                    {
+                        check = 1;
+                        int secondFunk2 = 0;
+                        string vivod1 = check + " " + hourConvert + " " + minutConvert + " " + secondFunk2;
+                        string vivod2 = check + " " + hourConvert + " " + minutConvert;
+                        string vivod3 = check + " " + hourConvert;
+                        StreamWriter sw = new StreamWriter(Path);
+
+                        sw.WriteLine(vivod1);
+                        sw.WriteLine(vivod2);
+                        sw.WriteLine(vivod3);
+
+                        sw.Close();
+                        //Console.WriteLine(vivod1);
+                        //Console.WriteLine(vivod2);
+                        //Console.WriteLine(vivod3);
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+    }
+
+}
